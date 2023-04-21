@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+    <head>
+        <title>{{title}}</title>
+    </head>
+    <body>
+        <h1>Start Publishing Data</h1>
+        <h2>Date and time on server: {{time}}</h2>
+        <div>
+            <form action="/publish" method="POST">
+                <input type="text" name="writeApi" placeholder="Write API Key" />
+                <button type="submit">Send Data</button>
+            </form>
+        </div>
+        <div>
+            {% if isPublishing == True %}
+                <h2>Sensor Data published for writeApi {{writeApi}}</h2>
+                <p>Data: {{data}}</p>
+            {% else %}
+                <h2>No Data Publishing</h2>
+            {% endif %}
+        </div>
+    </body>
